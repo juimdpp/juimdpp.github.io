@@ -1,4 +1,4 @@
-# [Hyunsoo Kim]
+# Hyunsoo Kim
 
 Welcome to my personal website! Here you can find information about my recent works, my CV, and more.
 
@@ -22,7 +22,7 @@ My ultimate dream is to achieve seamless interaction between virtual and physica
   
 ## Curriculum Vitae (CV)
 
-You can download my CV [here](link to your CV).
+You can download my CV [here]([link to your CV](https://github.com/juimdpp/juimdpp.github.io/blob/main/CV%20(2).pdf)).
 
 ## Contact Me
 
