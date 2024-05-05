@@ -22,7 +22,7 @@ My ultimate dream is to achieve seamless interaction between virtual and physica
   
 ## Curriculum Vitae (CV)
 
-You can download my CV [here]([link to your CV](https://github.com/juimdpp/juimdpp.github.io/blob/main/CV%20(2).pdf)).
+You can download my CV [here](https://github.com/juimdpp/juimdpp.github.io/blob/main/CV%20(2).pdf).
 
 ## Contact Me
 
