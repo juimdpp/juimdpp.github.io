@@ -135,9 +135,9 @@ a:hover {
 .hero {
   min-height: 570px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 250px;
+  grid-template-columns: minmax(0, 1fr) 320px;
   align-items: center;
-  gap: 70px;
+  gap: 58px;
   padding-top: 90px;
   padding-bottom: 90px;
 }
@@ -188,6 +188,26 @@ a:hover {
   color: var(--muted);
   font-size: 17px;
   line-height: 1.8;
+}
+
+.availability {
+  margin: 18px 0 0;
+  color: var(--blue-dark);
+  font-size: 15px;
+}
+
+.availability::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  display: inline-block;
+  margin: 0 9px 2px 0;
+  border-radius: 50%;
+  background: var(--blue-bright);
+}
+
+.availability strong {
+  color: var(--ink);
 }
 
 .hero-actions {
@@ -273,8 +293,8 @@ a:hover {
   display: grid;
   place-items: center;
   overflow: hidden;
-  border: 1px solid #c9dce9;
   background: var(--blue-light);
+  box-shadow: 0 24px 48px rgba(29, 78, 216, 0.18);
 }
 
 .portrait-frame img {
@@ -348,6 +368,140 @@ a:hover {
   color: var(--muted);
 }
 
+.project-heading {
+  margin-bottom: 34px;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: minmax(235px, 0.75fr) minmax(0, 1.25fr);
+  min-height: 270px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 18px 42px rgba(29, 78, 216, 0.12);
+}
+
+.project-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 35px;
+  overflow: hidden;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.project-visual::before,
+.project-visual::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 50%;
+}
+
+.project-visual::before {
+  top: -72px;
+  right: -52px;
+  width: 190px;
+  height: 190px;
+}
+
+.project-visual::after {
+  top: -33px;
+  right: -13px;
+  width: 112px;
+  height: 112px;
+}
+
+.project-visual > span,
+.project-visual > strong,
+.beat-line {
+  position: relative;
+  z-index: 1;
+}
+
+.project-visual > span {
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-visual > strong {
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(40px, 6vw, 58px);
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.beat-line {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.beat-line i {
+  width: 4px;
+  height: 12px;
+  display: block;
+  background: var(--blue-bright);
+}
+
+.beat-line i:nth-child(2),
+.beat-line i:nth-child(6) {
+  height: 23px;
+}
+
+.beat-line i:nth-child(3),
+.beat-line i:nth-child(5) {
+  height: 17px;
+}
+
+.beat-line i:nth-child(4) {
+  height: 30px;
+  background: var(--white);
+}
+
+.project-content {
+  align-self: center;
+  padding: 42px 48px;
+}
+
+.project-status {
+  margin: 0 0 7px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-content h3 {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.project-content > p:not(.project-status):not(.project-tags) {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.project-tags {
+  margin: 20px 0 0;
+  color: var(--blue-dark);
+  font-size: 13px;
+  font-weight: 650;
+}
+
 .publication-heading {
   max-width: none;
   display: grid;
@@ -376,7 +530,9 @@ a:hover {
 
 .publication-visual {
   position: relative;
-  min-height: 155px;
+  height: 208px;
+  min-height: 0;
+  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -618,8 +774,8 @@ a:hover {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr) 210px;
-    gap: 42px;
+    grid-template-columns: minmax(0, 1fr) 245px;
+    gap: 36px;
   }
 
   .publication-heading,
@@ -688,7 +844,7 @@ a:hover {
   }
 
   .portrait {
-    width: min(78%, 280px);
+    width: min(90%, 340px);
   }
 
   .section {
@@ -700,6 +856,18 @@ a:hover {
     gap: 32px;
   }
 
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual {
+    min-height: 220px;
+  }
+
+  .project-content {
+    padding: 34px 28px;
+  }
+
   .publication-card {
     grid-template-columns: 100px minmax(0, 1fr);
     gap: 20px;
@@ -707,7 +875,8 @@ a:hover {
   }
 
   .publication-visual {
-    min-height: 120px;
+    height: 134px;
+    min-height: 0;
     padding: 12px;
   }
 
@@ -752,7 +921,8 @@ a:hover {
   }
 
   .publication-visual {
-    min-height: 105px;
+    height: 140px;
+    min-height: 0;
   }
 }
 
