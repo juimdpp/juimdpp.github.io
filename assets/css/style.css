@@ -256,7 +256,7 @@ a:hover {
 }
 
 .button-secondary {
-  background: var(--white);
+  background: var(--blue-light);
   color: var(--blue);
 }
 
@@ -288,16 +288,6 @@ a:hover {
   margin: 0;
 }
 
-.portrait::before {
-  content: "";
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 76px;
-  height: 76px;
-  background: var(--blue-bright);
-}
-
 .portrait-frame {
   position: relative;
   width: 100%;
@@ -306,7 +296,7 @@ a:hover {
   place-items: center;
   overflow: hidden;
   background: var(--blue-light);
-  box-shadow: 0 24px 48px rgba(29, 78, 216, 0.18);
+  box-shadow: -50px 50px 65px -20px rgba(29, 78, 216, 0.18), 50px -50px 65px -20px rgba(29, 78, 216, 0.18); 
 }
 
 .portrait-frame img {
@@ -538,7 +528,7 @@ a:hover {
 
 .publication-card {
   display: grid;
-  grid-template-columns: 155px minmax(0, 1fr);
+  grid-template-columns: 280px minmax(0, 1fr);
   gap: 31px;
   padding: 30px 0;
   border-bottom: 1px solid var(--line);
@@ -546,38 +536,30 @@ a:hover {
 
 .publication-visual {
   position: relative;
-  height: 208px;
+  height: 168px;
   min-height: 0;
   align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 17px;
+  padding: 8px;
   overflow: hidden;
+  border: 2px rgba(209, 216, 255, 0.18);
+  border-style: outset;
   background: var(--blue-light);
+  box-shadow: 3px 3px 5px rgba(29, 39, 51, 0.06);
   color: var(--blue-dark);
 }
 
-.publication-visual::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 5px;
-  background: var(--blue-bright);
-}
 
 .publication-visual.has-image {
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .publication-visual.has-image::after {
-  content: "";
-  position: absolute;
-  inset: 45% 0 0;
-  background: rgba(23, 71, 117, 0.7);
+  content: none;
 }
 
 .publication-year,
@@ -885,13 +867,13 @@ a:hover {
   }
 
   .publication-card {
-    grid-template-columns: 100px minmax(0, 1fr);
+    grid-template-columns: 150px minmax(0, 1fr);
     gap: 20px;
     padding: 24px 0;
   }
 
   .publication-visual {
-    height: 134px;
+    height: 100px;
     min-height: 0;
     padding: 12px;
   }

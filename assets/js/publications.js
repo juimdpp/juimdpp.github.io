@@ -25,7 +25,7 @@ window.sitePublications = [
     youtube: "",
     doi: "",
     code: "",
-    thumbnail: ""
+    thumbnail: "assets/images/physics-fidelity-thumbnail.png"
   },
   {
     id: "maestro-mobisys-2024",
@@ -42,6 +42,6 @@ window.sitePublications = [
     youtube: "",
     doi: "https://doi.org/10.1145/3643832.3661891",
     code: "",
-    thumbnail: ""
+    thumbnail: "assets/images/maestro-thumbnail.png"
   }
 ];

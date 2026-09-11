@@ -40,11 +40,13 @@
       visual.classList.add("has-image");
       visual.style.backgroundImage = `url("${publication.thumbnail.replaceAll('"', "%22")}")`;
     }
-    visual.append(
-      makeElement("span", "publication-year", String(publication.year)),
-      makeElement("strong", "", publication.shortTitle || String(publication.year))
-    );
-    if (!publication.thumbnail) visual.append(makeElement("span", "publication-rings"));
+    if (!publication.thumbnail) {
+      visual.append(
+        makeElement("span", "publication-year", String(publication.year)),
+        makeElement("strong", "", publication.shortTitle || String(publication.year)),
+        makeElement("span", "publication-rings")
+      );
+    }
 
     const content = makeElement("div", "publication-content");
     const kicker = makeElement("div", "publication-kicker");
