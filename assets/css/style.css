@@ -6,6 +6,8 @@
   --ink: #1d2733;
   --muted: #5f6b78;
   --line: #dce3e9;
+  --warm-bg: #fcfcfd;
+  --warm-surface: #f8f8fa;
   --white: #ffffff;
   --shell: 960px;
 }
@@ -21,7 +23,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--white);
+  background: var(--warm-bg);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -70,7 +72,7 @@ a:hover {
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(248, 248, 250, 0.97);
   backdrop-filter: blur(10px);
 }
 
@@ -173,6 +175,16 @@ a:hover {
   font-weight: 780;
   letter-spacing: -0.048em;
   line-height: 1.04;
+}
+
+.hero-name {
+  display: inline-block;
+  transform-origin: top center;
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-name:hover {
+  transform: perspective(560px) rotateY(6deg);
 }
 
 .hero-role {
@@ -313,7 +325,11 @@ a:hover {
 .section {
   padding: 84px 0;
   border-top: 1px solid var(--line);
-  background: var(--white);
+  background: var(--warm-surface);
+}
+
+.section-tinted {
+  background: #f4f4f6;
 }
 
 .section-heading {
