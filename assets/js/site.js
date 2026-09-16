@@ -35,17 +35,28 @@
     const card = makeElement("article", "publication-card");
 
     const visual = makeElement("div", "publication-visual");
-    visual.setAttribute("aria-hidden", "true");
-    if (publication.thumbnail) {
-      visual.classList.add("has-image");
-      visual.style.backgroundImage = `url("${publication.thumbnail.replaceAll('"', "%22")}")`;
-    }
-    if (!publication.thumbnail) {
-      visual.append(
-        makeElement("span", "publication-year", String(publication.year)),
-        makeElement("strong", "", publication.shortTitle || String(publication.year)),
-        makeElement("span", "publication-rings")
-      );
+    if (publication.teaserVideoId) {
+      card.classList.add("has-video");
+      visual.classList.add("has-video");
+      const video = makeElement("iframe");
+      video.src = `https://www.youtube.com/embed/${encodeURIComponent(publication.teaserVideoId)}?playsinline=1`;
+      video.title = `Teaser video: ${publication.title}`;
+      video.referrerPolicy = "strict-origin-when-cross-origin";
+      video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      video.allowFullscreen = true;
+      visual.append(video);
+    } else {
+      visual.setAttribute("aria-hidden", "true");
+      if (publication.thumbnail) {
+        visual.classList.add("has-image");
+        visual.style.backgroundImage = `url("${publication.thumbnail.replaceAll('"', "%22")}")`;
+      } else {
+        visual.append(
+          makeElement("span", "publication-year", String(publication.year)),
+          makeElement("strong", "", publication.shortTitle || String(publication.year)),
+          makeElement("span", "publication-rings")
+        );
+      }
     }
 
     const content = makeElement("div", "publication-content");
@@ -58,6 +69,7 @@
     const links = makeElement("div", "publication-links");
 
     if (publication.pdf) links.append(makeExternalLink("Paper PDF", publication.pdf, true));
+    if (publication.shortVideo) links.append(makeExternalLink("Short Video", publication.shortVideo));
     if (publication.youtube) links.append(makeExternalLink("Presentation", publication.youtube));
     if (publication.doi) links.append(makeExternalLink("DOI", publication.doi));
     if (publication.code) links.append(makeExternalLink("Code", publication.code));

@@ -7,6 +7,12 @@
  * To show a presentation button, paste its full YouTube URL:
  *   youtube: "https://www.youtube.com/watch?v=..."
  *
+ * To embed a teaser in place of the thumbnail, set its YouTube video ID:
+ *   teaserVideoId: "ljWxtEvEXcM"
+ *
+ * To show a Short Video link beside the PDF, set its URL:
+ *   shortVideo: "https://youtu.be/iXe4xBFEses"
+ *
  * All optional links can be left as empty strings.
  */
 window.sitePublications = [
@@ -22,6 +28,8 @@ window.sitePublications = [
       "A 20-participant study of how rebound-model fidelity and direct familiarization with real balls and surfaces shape perceived plausibility in mixed reality.",
     tags: ["Mixed Reality", "Physics Fidelity"],
     pdf: "assets/papers/physics-fidelity-tvcg-2026.pdf",
+    teaserVideoId: "ljWxtEvEXcM",
+    shortVideo: "https://youtu.be/iXe4xBFEses",
     youtube: "",
     doi: "",
     code: "",

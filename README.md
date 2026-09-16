@@ -9,7 +9,8 @@ This is a static academic portfolio hosted with GitHub Pages. The homepage is in
 3. Copy the example publication object, paste the copy at the top of the list, and edit its fields.
 4. Set `pdf` to the uploaded file path.
 5. Set `youtube` to the full YouTube presentation URL.
-6. Commit the changes. GitHub Pages will update the publication list automatically.
+6. To embed a teaser in the thumbnail area, set `teaserVideoId` to the YouTube video ID (for example, `ljWxtEvEXcM`).
+7. Commit the changes. GitHub Pages will update the publication list automatically.
 
 Example:
 
@@ -32,7 +33,9 @@ Example:
 }
 ```
 
-Every link is optional. A button appears only when its field contains a URL. If `thumbnail` is empty, the site creates a blue typographic cover automatically.
+Every link is optional. A button appears only when its field contains a URL. A `teaserVideoId` replaces the thumbnail with an embedded player. Without a teaser or `thumbnail`, the site creates a blue typographic cover automatically.
+
+Set `shortVideo` to a video URL to add a **Short Video** link beside **Paper PDF**.
 
 ## Update the CV
 
